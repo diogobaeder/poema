@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}<span class="sr-only">{% trans "Home" %}</span>{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block body_id %}home-page{% endblock %}
+
+{% block main %}
+<div class="big-logo">
+<img src="{% static 'poema/img/logo.png' %}"
+    alt="{{ settings.SITE_TITLE }} - {{ settings.SITE_TAGLINE }}"
+    title="{{ settings.SITE_TITLE }} - {{ settings.SITE_TAGLINE }}" />
+</div>
+{% endblock %}

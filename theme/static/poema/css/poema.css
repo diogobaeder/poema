@@ -1,0 +1,19 @@
+#home-page .breadcrumb {
+    display: none;
+}
+
+#home-page .big-logo {
+    text-align: center;
+}
+
+.navbar .btn-facebook {
+    margin-top: 8px;
+}
+
+.navbar-brand {
+    width: 76px;
+    height: 50px;
+    background: url('../img/logo-small.png') no-repeat;
+    text-indent: -10000em;
+    margin-right: 5px;
+}
