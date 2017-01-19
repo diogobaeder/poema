@@ -9,5 +9,8 @@ lint:
 run:
 	python manage.py runserver
 
-templates:
+collect-templates:
 	python manage.py collecttemplates
+
+collect-static:
+	python manage.py collectstatic
