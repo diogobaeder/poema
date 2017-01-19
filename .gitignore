@@ -56,6 +56,7 @@ coverage.xml
 local_settings.py
 test_settings.py
 /static
+/templates
 
 # Flask stuff:
 instance/

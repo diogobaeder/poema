@@ -86,6 +86,10 @@ from django.utils.translation import ugettext_lazy as _
 USE_MODELTRANSLATION = False
 
 
+SITE_TITLE = 'POEMA'
+SITE_TAGLINE = 'Política Econômica da Maioria'
+
+
 ########################
 # MAIN DJANGO SETTINGS #
 ########################
