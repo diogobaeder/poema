@@ -54,6 +54,7 @@ coverage.xml
 *.log
 *.db
 local_settings.py
+test_settings.py
 /static
 
 # Flask stuff:
