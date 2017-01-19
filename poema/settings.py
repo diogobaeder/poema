@@ -108,11 +108,12 @@ USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en"
+LANGUAGE_CODE = "pt-BR"
 
 # Supported languages
 LANGUAGES = (
     ('en', _('English')),
+    ('pt-BR', _('Portuguese')),
 )
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
@@ -121,13 +122,13 @@ LANGUAGES = (
 DEBUG = False
 
 # Whether a user's session cookie expires when the Web browser is closed.
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 
 AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 
