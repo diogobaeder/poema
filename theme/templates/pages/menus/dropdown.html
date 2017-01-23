@@ -3,7 +3,7 @@
 {% if page_branch_in_menu %}
 
 {% if branch_level == 0 %}
-<ul class="nav navbar-nav">
+<ul class="nav navbar-nav navbar-right">
     {% for page in page_branch %}
     {% if not has_home and page.is_primary and forloop.first %}
     <li{% if on_home %} class="active"{% endif %} id="dropdown-menu-home">
@@ -25,11 +25,13 @@
     </li>
     {% endif %}
     {% endfor %}
+    <li class="social-item">
+        <a href="https://www.facebook.com/poemaPoliticaEconomicaDaMaioria/"
+            title="POEMA no Facebook" class="btn btn-social-icon btn-facebook">
+            <span class="fa fa-facebook"></span>
+        </a>
+    </li>
 </ul>
-<a href="https://www.facebook.com/poemaPoliticaEconomicaDaMaioria/"
-    title="POEMA no Facebook" class="btn btn-social-icon btn-facebook">
-    <span class="fa fa-facebook"></span>
-</a>
 
 {% else %}
 <ul class="dropdown-menu">
