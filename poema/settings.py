@@ -235,7 +235,7 @@ if DJANGO_VERSION < (1, 9):
 ################
 
 INSTALLED_APPS = (
-    'theme',
+    'poema.theme',
 
     "django.contrib.admin",
     "django.contrib.auth",
