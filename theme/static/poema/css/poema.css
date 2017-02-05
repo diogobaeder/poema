@@ -7,11 +7,15 @@
 }
 
 .navbar .btn-facebook {
-    margin: 5px 8px 5px 0;
+    margin: 5px 8px 0 0;
 }
 
 .navbar-default .navbar-nav > li > a.btn-facebook {
     color: #fff;
+}
+
+.nav li.social-item {
+    padding-top: 3px;
 }
 
 .navbar-default .navbar-nav > li > a.btn-facebook:hover,
@@ -20,12 +24,15 @@
 }
 
 .navbar-brand {
-    width: 300px;
-    height: 127px;
+    width: 236px;
+    height: 100px;
     background: url('../img/logo.png') no-repeat;
-    background-size: 300px 127px;
+    background-size: 236px 100px;
     text-indent: -10000em;
     margin-right: 5px;
+}
+.navbar > .container .navbar-brand {
+    margin-left: 0;
 }
 
 h3 {
@@ -44,18 +51,12 @@ h3 {
 /* Shrink navbar */
 
 body {
-    padding-top: 127px;
-}
-nav .navbar-brand {
-    font-size: 30px;
+    padding-top: 100px;
 }
 nav .navbar-toggle {
     margin: 13px 15px 13px 0;
 }
 nav a {
-    font-size: 18px;
-    padding-bottom: 20px !important;
-    padding-top: 20px !important;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -63,16 +64,12 @@ nav.navbar.shrink {
     min-height: 30px;
 }
 nav.navbar.shrink .navbar-brand {
-    font-size: 25px;
-    background-size: 83px 35px;
-    width: 83px;
-    height: 35px;
+    background-size: 118px 50px;
+    background-position: 0 0;
+    width: 118px;
+    height: 50px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-}
-nav.navbar.shrink a {
-    font-size: 15px;
-    padding-top: 10px !important;
 }
 nav.navbar.shrink .navbar-toggle {
     margin: 8px 15px 8px 0;
