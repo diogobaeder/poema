@@ -1,5 +1,3 @@
-
-from __future__ import absolute_import, unicode_literals
 import os
 
 from django import VERSION as DJANGO_VERSION
@@ -89,6 +87,8 @@ USE_MODELTRANSLATION = False
 SITE_TITLE = 'POEMA'
 SITE_TAGLINE = 'Política Econômica da Maioria'
 
+BLOG_USE_FEATURED_IMAGE = True
+
 
 ########################
 # MAIN DJANGO SETTINGS #
@@ -139,6 +139,8 @@ AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 # The numeric mode to set newly-uploaded files to. The value should be
 # a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
+
+SECRET_KEY = 'j$%=s_uz+&$*7a^mnn!@n*!ew01ohcuv3k#nq8r!kr$m-b^_v#'
 
 
 #############
@@ -203,7 +205,8 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(PROJECT_ROOT, "templates")
+            os.path.join(PROJECT_ROOT, "templates"),
+            os.path.join(PROJECT_ROOT, 'poema', 'templates'),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
