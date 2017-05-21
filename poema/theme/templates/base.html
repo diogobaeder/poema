@@ -18,7 +18,7 @@
 {% compress css %}
 <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
 <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
-<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+<link rel="stylesheet" href="{% static "poema/css/theme.min.css" %}">
 <link rel="stylesheet" href="{% static "poema/css/poema.css" %}">
 <link rel="stylesheet" href="{% static "font-awesome-4.7.0/css/font-awesome.css" %}">
 <link rel="stylesheet" href="{% static "poema/css/bootstrap-social.css" %}">
@@ -50,9 +50,13 @@
 {% block extra_head %}{% endblock %}
 </head>
 
-<body id="{% block body_id %}body{% endblock %}">
+<body id="{% block body_id %}body{% endblock %}" class="poema">
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div id="top-header">
+    <a class="logo" href="/">{{ settings.SITE_TITLE }} - {{ settings.SITE_TAGLINE }}</a>
+</div>
+
+<nav class="navbar navbar-inverse" role="navigation">
 <div class="container">
 <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

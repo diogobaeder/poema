@@ -1,10 +1,13 @@
 $(document).ready(function() {
-    var nav = $('.navbar');
+    var shrinkables = $('body, .navbar, #top-header'),
+        nav = $('.navbar');
     $(window).scroll(function() {
-        if ($(document).scrollTop() > 50) {
-            nav.addClass('shrink');
+        if ($(document).scrollTop() > 130) {
+            shrinkables.addClass('shrink');
+            nav.addClass('navbar-fixed-top');
         } else {
-            nav.removeClass('shrink');
+            shrinkables.removeClass('shrink');
+            nav.removeClass('navbar-fixed-top');
         }
     });
 });
