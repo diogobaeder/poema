@@ -53,7 +53,10 @@
 <body id="{% block body_id %}body{% endblock %}" class="poema">
 
 <div id="top-header">
-    <a class="logo" href="/">{{ settings.SITE_TITLE }} - {{ settings.SITE_TAGLINE }}</a>
+    <div class="container">
+        <a class="logo" href="/">{{ settings.SITE_TITLE }} - {{ settings.SITE_TAGLINE }}</a>
+        {% include 'includes/social_buttons.html' %}
+    </div>
 </div>
 
 <nav class="navbar navbar-inverse" role="navigation">
@@ -70,6 +73,9 @@
     {% endblock%}
 </div>
 <div class="navbar-collapse collapse">
+    <div class="navbar-right">
+    {% include 'includes/social_buttons.html' %}
+    </div>
     {% block navbar_search_form %}{% search_form "all" %}{% endblock %}
     {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
 </div>

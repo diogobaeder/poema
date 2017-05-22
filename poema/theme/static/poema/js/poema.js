@@ -10,4 +10,8 @@ $(document).ready(function() {
             nav.removeClass('navbar-fixed-top');
         }
     });
+    $('a.external').click(function(e){
+        e.preventDefault();
+        open(this.href);
+    });
 });

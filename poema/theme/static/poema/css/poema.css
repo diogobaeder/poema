@@ -11,8 +11,11 @@ body {
     background: #F2F2F2;
     height: 130px;
 }
+#top-header .container {
+    position: relative;
+}
 
-#top-header a {
+#top-header a.logo {
     position: absolute;
     display: block;
     width: 199px;
@@ -20,30 +23,23 @@ body {
     background: url('../img/logo-big.png') no-repeat;
     top: 50%;
     left: 50%;
-    margin-top: -40px;
+    margin-top: 20px;
     margin-left: -100px;
     text-indent: -10000em;
+}
+
+#top-header .social-buttons {
+    position: absolute;
+    right: 0;
+    top: 60px;
 }
 
 .navbar {
     border: none;
 }
 
-.navbar .btn-facebook {
-    margin: 5px 8px 0 0;
-}
-
-.navbar-default .navbar-nav > li > a.btn-facebook {
-    color: #fff;
-}
-
-.nav li.social-item {
-    padding-top: 3px;
-}
-
-.navbar-default .navbar-nav > li > a.btn-facebook:hover,
-.navbar-default .navbar-nav > li > a.btn-facebook:focus {
-    background: #2d4373;
+.navbar ul.nav > li > a:hover {
+    background: url('../img/nav-bottom-bg.png') repeat-x center bottom;
 }
 
 .navbar-brand {
@@ -59,6 +55,14 @@ body {
 }
 .navbar > .container .navbar-brand {
     margin-left: -70px;
+}
+
+.navbar .social-buttons {
+    margin-right: -72px;
+    margin-top: 8px;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .navbar-collapse {
@@ -77,6 +81,13 @@ h3 {
     color: #ff1118;
 }
 
+a.btn-youtube,
+a.btn-youtube:active,
+a.btn-youtube:visited,
+a.btn-youtube:hover {
+    color: red;
+}
+
 
 /* Shrink navbar */
 
@@ -89,6 +100,12 @@ body.shrink {
 }
 
 nav.navbar.shrink .navbar-brand {
+    opacity: 1;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+nav.navbar.shrink .social-buttons {
     opacity: 1;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
