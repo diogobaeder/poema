@@ -43,6 +43,13 @@ body {
     background: url('../img/nav-bottom-bg.png') repeat-x center bottom;
 }
 
+.navbar .dropdown-menu {
+    border-top: none;
+    margin-top: none;
+    background: url('../img/nav-bottom-bg.png') repeat-x center -2px;
+    background-color: inherit;
+}
+
 .navbar-brand {
     width: 36px;
     height: 41px;
@@ -82,13 +89,6 @@ h3 {
     color: #ff1118;
 }
 
-a.btn-youtube,
-a.btn-youtube:active,
-a.btn-youtube:visited,
-a.btn-youtube:hover {
-    color: red;
-}
-
 
 /* Shrink navbar */
 
@@ -112,7 +112,9 @@ nav.navbar.shrink .social-buttons {
     transition: all 0.3s ease;
 }
 
-/* End shrink navbar */
+
+
+/* Social buttons */
 
 .social-button {
     position: relative;
@@ -130,6 +132,9 @@ nav.navbar.shrink .social-buttons {
     background: url('../img/youtube_btn.png') no-repeat;
 }
 
+
+
+/* Search */
 
 form.search {
     position: relative;
