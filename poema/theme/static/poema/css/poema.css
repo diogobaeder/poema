@@ -129,3 +129,38 @@ nav.navbar.shrink .social-buttons {
 .social-button.youtube {
     background: url('../img/youtube_btn.png') no-repeat;
 }
+
+
+form.search {
+    position: relative;
+}
+
+.search-bar {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: #040404;
+    width: 320px;
+    padding: 8px;
+}
+.search.active .search-bar {
+    display: block;
+}
+
+.fa.search-toggle {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 6px;
+}
+.search.active .fa.search-toggle {
+    color: #FF0009;
+}
+
+.search-bar button.submit {
+    background: #FF0009;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 2px 5px;
+}

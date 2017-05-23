@@ -1,6 +1,8 @@
 $(document).ready(function() {
     var shrinkables = $('body, .navbar, #top-header'),
-        nav = $('.navbar');
+        nav = $('.navbar'),
+        searchForm = $('form.search'),
+        searchQuery = $('.search-query');
     $(window).scroll(function() {
         if ($(document).scrollTop() > 130) {
             shrinkables.addClass('shrink');
@@ -14,4 +16,10 @@ $(document).ready(function() {
         e.preventDefault();
         open(this.href);
     });
+    $('.search-toggle').click(function(){
+        searchForm.toggleClass('active');
+        if (searchForm.hasClass('active')) {
+            searchQuery.focus();
+        }
+    })
 });
