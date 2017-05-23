@@ -32,6 +32,7 @@ body {
     position: absolute;
     right: 0;
     top: 60px;
+    padding-right: 15px;
 }
 
 .navbar {
@@ -58,8 +59,8 @@ body {
 }
 
 .navbar .social-buttons {
-    margin-right: -72px;
-    margin-top: 8px;
+    margin-right: -80px;
+    margin-top: 10px;
     opacity: 0;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -112,3 +113,19 @@ nav.navbar.shrink .social-buttons {
 }
 
 /* End shrink navbar */
+
+.social-button {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    text-indent: -10000em;
+    display: block;
+    margin-right: 10px;
+}
+.social-button.facebook {
+    background: url('../img/facebook_btn.png') no-repeat;
+}
+.social-button.youtube {
+    background: url('../img/youtube_btn.png') no-repeat;
+}
