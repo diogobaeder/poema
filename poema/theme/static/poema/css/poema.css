@@ -47,7 +47,7 @@ body {
     border-top: none;
     margin-top: none;
     background: url('../img/nav-bottom-bg.png') repeat-x center -2px;
-    background-color: inherit;
+    background-color: #F2F2F2;
 }
 
 .navbar-brand {
@@ -77,12 +77,12 @@ body {
     padding: 0;
 }
 
-h3 {
-    text-transform: uppercase;
-    background: url('../img/seta.jpg') no-repeat 0px;
-    color: #ff1118;
-    padding-left: 25px;
-}
+/*h3 {*/
+    /*text-transform: uppercase;*/
+    /*background: url('../img/seta.jpg') no-repeat 0px;*/
+    /*color: #ff1118;*/
+    /*padding-left: 25px;*/
+/*}*/
 
 .statement {
     text-transform: uppercase;
@@ -168,4 +168,88 @@ form.search {
     color: #fff;
     font-size: 1.5em;
     padding: 2px 5px;
+}
+
+
+
+/* Content */
+
+#home-page .content-header {
+    display: none;
+}
+
+#home-page .news {
+    width: 100%;
+    min-height: 1em;
+    padding: 40px 0;
+}
+
+#home-page .news.featuring {
+    margin-top: -20px;
+}
+
+#home-page .news.featuring .news-event {
+    padding: 0;
+    margin: 0;
+}
+
+#home-page .news.featuring .news-event a {
+    display: block;
+    background: #000;
+    width: 380px;
+    height: 409px;
+}
+
+#home-page .news.featuring .news-event a img {
+    opacity: .4;
+}
+
+#home-page .news.featuring .news-event a:hover img,
+#home-page .news.featuring .news-event a:active img {
+    opacity: 1;
+}
+
+#home-page .news.featuring .news-event a:hover .text,
+#home-page .news.featuring .news-event a:active .text {
+    display: none;
+}
+
+#home-page .news.featuring .news-event .text {
+    position: absolute;
+    top: 213px;
+    color: #fff;
+}
+
+#home-page .news.featuring .news-event h3 {
+    font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+    color: #ff0008;
+    font-size: 1em;
+}
+
+#home-page .news.featuring .news-event h3 span {
+    background: rgba(0, 0, 0, .6);
+    padding: 5px 10px;
+}
+
+#home-page .news.featuring .news-event h2,
+#home-page .news.featuring .news-event .description {
+    margin: 20px;
+}
+
+#home-page .news.light {
+    background: #fff;
+}
+
+#home-page .news.other {
+    padding-top: 0;
+}
+
+#home-page .news.other .news-event {
+    height: 336px;
+    background: #fff;
+    margin-top: 40px;
+}
+
+.insivible {
+    visibility: hidden;
 }

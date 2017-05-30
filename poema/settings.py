@@ -165,6 +165,9 @@ DATABASES = {
 }
 
 
+THUMBNAIL_KVSTORE = 'sorl.thumbnail.kvstores.redis_kvstore.KVStore'
+
+
 #########
 # PATHS #
 #########
@@ -247,6 +250,7 @@ if DJANGO_VERSION < (1, 9):
 INSTALLED_APPS = (
     'poema.theme',
     'compressor',
+    'sorl.thumbnail',
 
     "django.contrib.admin",
     "django.contrib.auth",
