@@ -245,9 +245,37 @@ form.search {
 }
 
 #home-page .news.other .news-event {
+    display: block;
     height: 336px;
     background: #fff;
     margin-top: 40px;
+}
+
+#home-page .news.other .news-event .text {
+    position: absolute;
+    top: 180px;
+    color: #5d5d5d;
+}
+
+#home-page .news.other .news-event h3 {
+    font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+    color: #ff0008;
+    font-size: 1em;
+}
+
+#home-page .news.other .news-event h3 span {
+    background: #fff;
+    padding: 5px 10px;
+}
+
+#home-page .news.other .news-event .text h2 {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+#home-page .news.other .news-event h2,
+#home-page .news.other .news-event .description {
+    margin: 10px 20px;
 }
 
 .insivible {
