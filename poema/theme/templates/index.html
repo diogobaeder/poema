@@ -13,7 +13,7 @@
 {% block body_id %}home-page{% endblock %}
 
 {% block middle_content %}
-<div class="light news featuring">
+<div class="light news featuring content-block">
     <div class="container">
         {% for post in posts|slice:':3' %}
         <div class="col-xs-4 news-event">
@@ -37,7 +37,7 @@
         {% endfor %}
     </div>
 </div>
-<div class="news other">
+<div class="news other content-block">
     <div class="container">
         <div class="row">
             {% for post in posts|slice:'3:' %}
@@ -60,6 +60,52 @@
                 </a>
             </div>
             {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="light about content-block">
+    <div class="container">
+        <div class="row">
+            <a href="/quem-somos/" title="A POEMA">
+                <div class="col-xs-6 img-block"></div>
+                <div class="col-xs-6">
+                    <h3>A POEMA</h3>
+                    <p>Lorem ipsun</p>
+                    <p class="more">// ver mais</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="content-block pillars">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 img-block"></div>
+            <div class="col-xs-6">
+                <h3>Nossos pilares</h3>
+                <div class="tab-content">
+                    {% for page in pillars %}
+                    <div role="tabpanel" class="tab-pane fade {% if forloop.first %}in active{% endif %}"
+                        id="tab-content-{{ page.title|slugify }}">
+                        <h4>{{ page.title }}</h4>
+                        {{ page.description|truncatewords_html:30 }}
+                        <p class="more"><a href="{{ page.get_absolute_url }}">// ver mais</a></p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <nav aria-label="Navegação dos pilares">
+                    <ul class="pagination">
+                        {% for page in pillars %}
+                            <li class="{% if forloop.first %}active{% endif %}">
+                                <a href="#tab-content-{{ page.title|slugify }}" title="{{ page.title }}"
+                                    data-toggle="tab"
+                                    role="tab"
+                                    aria-controls="tab-content-{{ page.title|slugify }}">{{ forloop.counter }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 </div>

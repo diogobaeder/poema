@@ -178,10 +178,13 @@ form.search {
     display: none;
 }
 
+#home-page .content-block {
+    padding: 40px 0;
+}
+
 #home-page .news {
     width: 100%;
     min-height: 1em;
-    padding: 40px 0;
 }
 
 #home-page .news.featuring {
@@ -236,7 +239,7 @@ form.search {
     margin: 10px 20px;
 }
 
-#home-page .news.light {
+#home-page .light {
     background: #fff;
 }
 
@@ -276,6 +279,25 @@ form.search {
 #home-page .news.other .news-event h2,
 #home-page .news.other .news-event .description {
     margin: 10px 20px;
+}
+
+#home-page .about .img-block {
+    background: url('../img/logo-circle.png') no-repeat center center;
+    height: 320px;
+}
+
+#home-page .pillars .img-block {
+    background: url('../img/bancos.png') no-repeat center center;
+    height: 300px;
+}
+
+#home-page .pillars .tab-content {
+    min-height: 160px;
+}
+
+#home-page p.more {
+    text-align: right;
+    margin: 1em 0;
 }
 
 .insivible {
