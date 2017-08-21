@@ -82,6 +82,32 @@ body {
     color: #ff1118;
 }
 
+footer {
+    background: #303030;
+    padding: 30px 0;
+}
+
+footer .nav-footer > ul {
+    width: 15%;
+    float: left;
+}
+
+footer a, footer a:visited, footer a:hover, footer a:active {
+    color: #ddd;
+}
+
+footer .nav-footer > ul > li:first-child {
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+footer .site-info {
+    border-top: solid 1px #ddd;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
 
 /* Shrink navbar */
 
