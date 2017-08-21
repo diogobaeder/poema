@@ -77,13 +77,6 @@ body {
     padding: 0;
 }
 
-/*h3 {*/
-    /*text-transform: uppercase;*/
-    /*background: url('../img/seta.jpg') no-repeat 0px;*/
-    /*color: #ff1118;*/
-    /*padding-left: 25px;*/
-/*}*/
-
 .statement {
     text-transform: uppercase;
     color: #ff1118;
@@ -174,6 +167,16 @@ form.search {
 
 /* Content */
 
+.poema h3 {
+    font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+h3.referenced {
+    margin-bottom: 1em;
+}
+
 #home-page .content-header {
     display: none;
 }
@@ -224,7 +227,6 @@ form.search {
 }
 
 #home-page .news.featuring .news-event h3 {
-    font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
     color: #ff0008;
     font-size: 1em;
 }
@@ -292,7 +294,7 @@ form.search {
 }
 
 #home-page .pillars .tab-content {
-    min-height: 160px;
+    min-height: 150px;
 }
 
 #home-page p.more {
