@@ -108,6 +108,15 @@ footer .site-info {
     padding-top: 1em;
 }
 
+footer .site-info a.logo {
+    float: right;
+    display: block;
+    width: 45px;
+    height: 51px;
+    background: url(../img/poema_rodape.png) no-repeat;
+    text-indent: -10000em;
+}
+
 
 /* Shrink navbar */
 
@@ -316,7 +325,7 @@ h3.referenced {
 
 #home-page .pillars .img-block {
     background: url('../img/bancos.png') no-repeat center center;
-    height: 300px;
+    height: 345px;
 }
 
 #home-page .pillars .tab-content {
