@@ -50,7 +50,7 @@
 {% block extra_head %}{% endblock %}
 </head>
 
-<body id="{% block body_id %}body{% endblock %}" class="poema">
+<body id="{% block body_id %}body{% endblock %}" class="poema {% block body_classes %}{% endblock %}">
 
 <div id="top-header">
     <div class="container">
@@ -97,13 +97,15 @@
     {% endif %}
     {% endnevercache %}
 
-    <h1>{% block title %}{% endblock %}</h1>
-
     <ul class="breadcrumb">
     {% spaceless %}
     {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
     {% endspaceless %}
     </ul>
+
+    {% block category %}{% endblock %}
+
+    <h1>{% block title %}{% endblock %}</h1>
 
 </div>
 
