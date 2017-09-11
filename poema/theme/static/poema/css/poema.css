@@ -202,7 +202,7 @@ form.search {
 
 /* Content */
 
-.poema h3 {
+.poema h3, .poema h1 {
     font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
     font-size: 32px;
     font-weight: normal;
@@ -212,15 +212,26 @@ h3.referenced {
     margin-bottom: 1em;
 }
 
-body.blog-post h3.category {
+body.blog-post h3.category,
+.blog-post-list h1 {
     color: #FF0009;
     border-bottom: solid 1px #FF0009;
     padding-bottom: 0.5em;
     font-size: 20px;
 }
 
-body.blog-post h3.category span {
-    margin-right: 0.5em;
+body.blog-post h3.category span,
+.blog-post-list h1 span {
+    margin-right: 0.2em;
+}
+
+.blog-post-list .news-block {
+    background: #fff;
+    margin: 20px 0;
+}
+
+.blog-post-list .news-block .image-box {
+    padding: 0;
 }
 
 #home-page .content-header {
