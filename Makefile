@@ -26,3 +26,7 @@ apply-migrations:
 
 pep8:
 	autopep8 -i -r -v -a -a -a -a -a .
+
+messages:
+	python manage.py makemessages -a
+	python manage.py compilemessages
