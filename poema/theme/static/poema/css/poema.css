@@ -234,6 +234,10 @@ body.blog-post h3.category span,
     padding: 0;
 }
 
+.blog-post-list .pagination {
+    float: right;
+}
+
 #home-page .content-header {
     display: none;
 }
@@ -397,4 +401,5 @@ body.blog-post h3.category span,
 .right .panel .tag-cloud li {
     background: #fff;
     padding: 1em;
+    margin-bottom: 4px;
 }
