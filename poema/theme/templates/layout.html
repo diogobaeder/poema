@@ -50,7 +50,7 @@
 {% block extra_head %}{% endblock %}
 </head>
 
-<body id="{% block body_id %}body{% endblock %}" class="poema {% block body_classes %}{% endblock %}">
+<body id="{% block body_id %}body{% endblock %}" class="poema {% if page and page.title %}page {% endif %}{% block body_classes %}{% endblock %}">
 
 <div id="top-header">
     <div class="container">

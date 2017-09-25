@@ -251,6 +251,7 @@ INSTALLED_APPS = (
     'poema.theme',
     'compressor',
     'sorl.thumbnail',
+    'widget_tweaks',
 
     "django.contrib.admin",
     "django.contrib.auth",
@@ -302,6 +303,10 @@ MIDDLEWARE_CLASSES = (
 # at the moment we are using custom forks of them.
 PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
 PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
+
+
+FORMS_USE_HTML5 = True
+
 
 #########################
 # OPTIONAL APPLICATIONS #

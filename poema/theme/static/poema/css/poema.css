@@ -213,7 +213,8 @@ h3.referenced {
 }
 
 body.blog-post h3.category,
-.blog-post-list h1 {
+.blog-post-list h1,
+body.page h1 {
     color: #FF0009;
     border-bottom: solid 1px #FF0009;
     padding-bottom: 0.5em;
@@ -221,8 +222,13 @@ body.blog-post h3.category,
 }
 
 body.blog-post h3.category span,
-.blog-post-list h1 span {
+.blog-post-list h1 span,
+body.page h1 span {
     margin-right: 0.2em;
+}
+
+body.page h1 div {
+    display: inline;
 }
 
 .blog-post-list .news-block {
@@ -361,6 +367,10 @@ body.blog-post h3.category span,
 #home-page p.more {
     text-align: right;
     margin: 1em 0;
+}
+
+form.contact {
+    padding-bottom: 100px;
 }
 
 .insivible {
