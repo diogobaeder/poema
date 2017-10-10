@@ -1,0 +1,54 @@
+---
+
+server:
+  home: /home/rafael2001
+  tempdir: /tmp/rafael2001
+  python_version: 3.6
+
+ssh:
+  files:
+    public_key: ~/.ssh/poema.pub
+    private_key: ~/.ssh/poema
+
+domains:
+  name: rafael2001.webfactional.com
+  main: poema
+  static: poemastatic
+  uploads: poemauploads
+
+applications:
+  main_name: poema
+  main:
+    name: poema
+    path: "/home/rafael2001/webapps/poema"
+  static:
+    name: poemastatic
+    path: "/home/rafael2001/webapps/poema/static"
+  uploads:
+    name: poemauploads
+    path: "/home/rafael2001/webapps/poema/uploads"
+
+versioning:
+  repo: "git@github.com:diogobaeder/poema.git"
+  remote: origin
+  branch: master
+
+caching:
+  process_name: memcached
+  command: "memcached -d -m 50 -s /tmp/rafael2001/memcached.sock -P /tmp/rafael2001/memcached.pid"
+  dir: /tmp/rafael2001
+  pid_file: /tmp/rafael2001/memcached.pid
+
+project:
+  django_settings:
+    module: "poema.prod_settings"
+    path: "poema/prod_settings.py"
+  virtualenv:
+    command: "/home/rafael2001/bin/virtualenv"
+    name: ".env"
+    python: "/home/rafael2001/webapps/poema/.env/bin/python"
+    pip: "/home/rafael2001/webapps/poema/.env/bin/pip"
+    requirements: "/home/rafael2001/webapps/poema/requirements.txt"
+
+webfaction_user: "{{ vault.webfaction.user }}"
+webfaction_passwd: "{{ vault.webfaction.password }}"

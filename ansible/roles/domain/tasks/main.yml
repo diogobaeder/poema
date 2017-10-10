@@ -1,0 +1,12 @@
+---
+
+- name: Create the domains
+  webfaction_domain:
+    name: "{{ domains.name }}"
+    state: present
+    subdomains:
+      - "{{ domains.main }}"
+      - "{{ domains.static }}"
+      - "{{ domains.uploads }}"
+    login_name: "{{webfaction_user}}"
+    login_password: "{{webfaction_passwd}}"

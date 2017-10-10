@@ -1,0 +1,47 @@
+---
+
+- name: Create the git app
+  webfaction_app:
+    name: git
+    state: present
+    type: git
+    login_name: "{{ webfaction_user }}"
+    login_password: "{{ webfaction_passwd }}"
+
+- name: Create the website's main app
+  webfaction_app:
+    name: "{{ applications.main.name }}"
+    state: present
+    type: custom_app_with_port
+    login_name: "{{ webfaction_user }}"
+    login_password: "{{ webfaction_passwd }}"
+
+- name: Create directory for static app
+  file:
+    path: "{{ applications.static.path }}"
+    state: directory
+    mode: 0755
+
+- name: Create the static app
+  webfaction_app:
+    name: "{{ applications.static.name }}"
+    extra_info: "{{ applications.static.path }}"
+    state: present
+    type: symlink_static_only
+    login_name: "{{ webfaction_user }}"
+    login_password: "{{ webfaction_passwd }}"
+
+- name: Create directory for uploads app
+  file:
+    path: "{{ applications.uploads.path }}"
+    state: directory
+    mode: 0755
+
+- name: Create the uploads app
+  webfaction_app:
+    name: "{{ applications.uploads.name }}"
+    extra_info: "{{ applications.uploads.path }}"
+    state: present
+    type: symlink_static_only
+    login_name: "{{ webfaction_user }}"
+    login_password: "{{ webfaction_passwd }}"

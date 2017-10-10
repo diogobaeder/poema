@@ -1,0 +1,19 @@
+---
+
+- name: Creating temp dir
+  file:
+    path: "{{ server.tempdir }}"
+    state: directory
+    mode: 0700
+
+- name: Create the virtualenv
+  shell: "{{ project.virtualenv.command }} {{ project.virtualenv.name }}"
+  args:
+    chdir: "{{ applications.main.path }}"
+    creates: "{{ applications.main.path }}/{{ project.virtualenv.name }}"
+
+- name: Install dependencies
+  pip:
+    requirements: "{{ project.virtualenv.requirements }}"
+    chdir: "{{ applications.main.path }}"
+    executable: "{{ project.virtualenv.pip }}"

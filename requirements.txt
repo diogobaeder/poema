@@ -16,6 +16,7 @@ Mezzanine==4.2.3
 oauthlib==2.0.4
 olefile==0.44
 Pillow==4.2.1
+psycopg2==2.7.3.1
 python-twitter==3.2.1
 pytz==2017.2
 rcssmin==1.0.6

@@ -1,0 +1,12 @@
+---
+
+- name: Initializing the working tree
+  shell: git init . && git remote add {{ versioning.remote }} {{ versioning.repo }}
+  args:
+    chdir: "{{ applications.main.path }}"
+    creates: "{{ applications.main.path }}/.git"
+
+- name: Checking out the latest changes
+  shell: git fetch && git reset --hard {{ versioning.remote }}/{{ versioning.branch }} && git clean -f
+  args:
+    chdir: "{{ applications.main.path }}"

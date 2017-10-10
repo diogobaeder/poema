@@ -1,0 +1,29 @@
+---
+
+- name: Installing pip
+  easy_install:
+    name: pip
+    state: latest
+    executable: easy_install-{{ server.python_version }}
+
+- name: Installing virtualenv
+  pip:
+    <<: &pip_base
+      state: latest
+      executable: pip{{ server.python_version }}
+    name: virtualenv
+
+- name: Installing virtualenvwrapper
+  pip:
+    <<: *pip_base
+    name: virtualenvwrapper
+
+- name: Installing circus
+  pip:
+    <<: *pip_base
+    name: circus
+
+- name: Installing circus-web
+  pip:
+    <<: *pip_base
+    name: circus-web

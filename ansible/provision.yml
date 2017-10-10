@@ -1,0 +1,16 @@
+---
+
+- hosts: poema
+  serial: 1
+  vars_files:
+    - vault.yml
+    - vars.yml
+  roles:
+    - ssh
+    - domain
+    - database
+    - applications
+    - versioning
+    - packages
+    - cache
+    - project
