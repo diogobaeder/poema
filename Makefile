@@ -12,6 +12,9 @@ lint:
 run:
 	python manage.py runserver
 
+run-circus:
+	circusd server.cfg
+
 collect-templates:
 	python manage.py collecttemplates
 

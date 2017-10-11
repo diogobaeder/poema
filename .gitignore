@@ -60,6 +60,7 @@ prod_settings.py
 test_settings.py
 /static
 /templates
+server.cfg
 
 # Deploy stuff
 ansible/provision.retry
