@@ -1,0 +1,32 @@
+---
+
+- name: Creating websites
+  webfaction_site:
+    name: "{{ item.name }}"
+    state: present
+    host: "{{ item.host }}"
+    subdomains:
+      - "{{ item.domain }}"
+    site_apps:
+      - ["{{ item.app }}", "{{ item.url_path }}"]
+    https: no
+    login_name: "{{webfaction_user}}"
+    login_password: "{{webfaction_passwd}}"
+  with_items:
+    - "{{ website.main }}"
+    - "{{ website.static }}"
+    - "{{ website.uploads }}"
+
+- name: Adding server to cron
+  cron:
+    name: app_server
+    special_time: reboot
+    job: "{{ project.server.command }}"
+
+- name: Starting server
+  shell: "{{ project.server.command }}"
+  args:
+    creates: "{{ project.server.pid_file }}"
+
+- name: Reloading server configuration
+  shell: "{{ project.server.reload }}"

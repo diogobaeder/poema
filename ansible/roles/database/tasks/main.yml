@@ -3,7 +3,7 @@
 - name: Create the database
   webfaction_db:
     name: "{{vault.db.user}}"
-    password: ""
+    password: "{{vault.db.password}}"
     type: postgresql
     login_name: "{{webfaction_user}}"
     login_password: "{{webfaction_passwd}}"

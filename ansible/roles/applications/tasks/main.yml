@@ -9,6 +9,7 @@
     login_password: "{{ webfaction_passwd }}"
 
 - name: Create the website's main app
+  register: main_app_result
   webfaction_app:
     name: "{{ applications.main.name }}"
     state: present

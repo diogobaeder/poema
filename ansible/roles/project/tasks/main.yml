@@ -17,3 +17,36 @@
     requirements: "{{ project.virtualenv.requirements }}"
     chdir: "{{ applications.main.path }}"
     executable: "{{ project.virtualenv.pip }}"
+
+- name: Transfer production settings
+  copy:
+    src: "{{ project.django_settings.src }}"
+    dest: "{{ project.django_settings.dest }}"
+    mode: 0600
+
+- name: Migrate the database
+  django_manage:
+    <<: &manage_base
+      app_path: "{{ applications.main.path }}"
+      settings: "{{ project.django_settings.module }}"
+      virtualenv: "{{ applications.main.path }}/{{ project.virtualenv.name }}"
+    command: migrate
+
+- name: Collect static files
+  django_manage:
+    <<: *manage_base
+    command: collectstatic
+
+- name: Compile localization messages
+  shell: "{{ project.virtualenv.django_admin }} compilemessages"
+  args:
+    chdir: "{{ project.app.path }}"
+
+- name: Templating the web server configuration
+  register: server_template_result
+  template:
+    src: "{{ project.server.src }}"
+    dest: "{{ project.server.dest }}"
+    mode: 0644
+  vars:
+    server_port: "{{ main_app_result.result.port }}"

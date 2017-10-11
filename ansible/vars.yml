@@ -17,7 +17,6 @@ domains:
   uploads: poemauploads
 
 applications:
-  main_name: poema
   main:
     name: poema
     path: "/home/rafael2001/webapps/poema"
@@ -40,15 +39,50 @@ caching:
   pid_file: /tmp/rafael2001/memcached.pid
 
 project:
+  app:
+    path: "/home/rafael2001/webapps/poema/poema"
+    wsgi_app: poema.wsgi.application
+    processes: 5
+    debug: True
+  server:
+    src: "{{ playbook_dir }}/../server.cfg.template"
+    dest: "/home/rafael2001/webapps/poema/server.cfg"
+    command: "cd /home/rafael2001/webapps/poema && ~/bin/circusd --daemon server.cfg"
+    reload: "cd /home/rafael2001/webapps/poema && ~/bin/circusctl reload"
+    pid_file: /tmp/rafael2001/circusd.pid
+    log_file: /home/rafael2001/logs/user/circus_poema.log
   django_settings:
     module: "poema.prod_settings"
-    path: "poema/prod_settings.py"
+    src: "{{ playbook_dir }}/../poema/prod_settings.py"
+    dest: "/home/rafael2001/webapps/poema/poema/prod_settings.py"
   virtualenv:
     command: "/home/rafael2001/bin/virtualenv"
     name: ".env"
+    bin: "/home/rafael2001/webapps/poema/.env/bin"
     python: "/home/rafael2001/webapps/poema/.env/bin/python"
     pip: "/home/rafael2001/webapps/poema/.env/bin/pip"
+    django_admin: "/home/rafael2001/webapps/poema/.env/bin/django-admin"
     requirements: "/home/rafael2001/webapps/poema/requirements.txt"
+
+website:
+  main:
+    name: poema
+    domain: poema.rafael2001.webfactional.com
+    host: web501.webfaction.com
+    app: poema
+    url_path: /
+  static:
+    name: poemastatic
+    domain: poemastatic.rafael2001.webfactional.com
+    host: web501.webfaction.com
+    app: poemastatic
+    url_path: /
+  uploads:
+    name: poemauploads
+    domain: poemauploads.rafael2001.webfactional.com
+    host: web501.webfaction.com
+    app: poemauploads
+    url_path: /
 
 webfaction_user: "{{ vault.webfaction.user }}"
 webfaction_passwd: "{{ vault.webfaction.password }}"
