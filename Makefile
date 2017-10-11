@@ -18,9 +18,6 @@ run-circus:
 shell:
 	python manage.py shell
 
-collect-templates:
-	python manage.py collecttemplates
-
 collect-static:
 	python manage.py collectstatic
 

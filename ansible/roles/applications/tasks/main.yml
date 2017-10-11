@@ -28,9 +28,15 @@
     name: "{{ applications.static.name }}"
     extra_info: "{{ applications.static.path }}"
     state: present
-    type: symlink_static_only
+    type: symlink56
     login_name: "{{ webfaction_user }}"
     login_password: "{{ webfaction_passwd }}"
+
+- name: Templating the static htaccess
+  template:
+    src: "{{ applications.static.htaccess_src }}"
+    dest: "{{ applications.static.htaccess_dest }}"
+    mode: 0644
 
 - name: Create directory for uploads app
   file:

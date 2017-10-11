@@ -17,9 +17,9 @@
 
 {% compress css %}
 <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-<!--<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">-->
 <link rel="stylesheet" href="{% static "poema/css/theme.min.css" %}">
 <link rel="stylesheet" href="{% static "poema/css/poema.css" %}">
+<link rel="stylesheet" href="{% static "font-awesome-4.7.0/css/font-awesome.css" %}">
 <link rel="stylesheet" href="{% static "poema/css/bootstrap-social.css" %}">
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
@@ -32,8 +32,6 @@
 {% endifinstalled %}
 {% block extra_css %}{% endblock %}
 {% endcompress %}
-
-<link rel="stylesheet" href="{% static "font-awesome-4.7.0/css/font-awesome.css" %}">
 
 {% compress js %}
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>

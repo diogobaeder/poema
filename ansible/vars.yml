@@ -23,6 +23,8 @@ applications:
   static:
     name: poemastatic
     path: "/home/rafael2001/webapps/poema/static"
+    htaccess_src: "{{ playbook_dir }}/htaccess.template"
+    htaccess_dest: "/home/rafael2001/webapps/poemastatic/.htaccess"
   uploads:
     name: poemauploads
     path: "/home/rafael2001/webapps/poema/uploads"
@@ -45,7 +47,7 @@ project:
     processes: 5
     debug: True
   server:
-    src: "{{ playbook_dir }}/../server.cfg.template"
+    src: "{{ playbook_dir }}/server.cfg.template"
     dest: "/home/rafael2001/webapps/poema/server.cfg"
     command: "cd /home/rafael2001/webapps/poema && ~/bin/circusd --daemon server.cfg"
     reload: "cd /home/rafael2001/webapps/poema && ~/bin/circusctl reloadconfig && ~/bin/circusctl reload"
