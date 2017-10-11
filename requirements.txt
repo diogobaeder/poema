@@ -13,6 +13,7 @@ filebrowser-safe==0.4.7
 future==0.16.0
 grappelli-safe==0.4.7
 html5lib==0.999999999
+meinheld==0.6.1
 Mezzanine==4.2.3
 oauthlib==2.0.4
 olefile==0.44
