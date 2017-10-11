@@ -1,2 +1,2 @@
-Header set Access-Control-Allow-Origin: http://{{ website.main.domain }}             #default
-Header set Access-Control-Allow-Origin: https://{{ website.main.domain }} env=HTTPS   #override if https
+Header set Access-Control-Allow-Origin: http://{{ website.main.domain }}
+Header set Access-Control-Allow-Origin: https://{{ website.main.domain }} env=HTTPS
