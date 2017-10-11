@@ -48,7 +48,7 @@ project:
     src: "{{ playbook_dir }}/../server.cfg.template"
     dest: "/home/rafael2001/webapps/poema/server.cfg"
     command: "cd /home/rafael2001/webapps/poema && ~/bin/circusd --daemon server.cfg"
-    reload: "cd /home/rafael2001/webapps/poema && ~/bin/circusctl reload"
+    reload: "cd /home/rafael2001/webapps/poema && ~/bin/circusctl reloadconfig && ~/bin/circusctl reload"
     pid_file: /tmp/rafael2001/circusd.pid
     log_file: /home/rafael2001/logs/user/circus_poema.log
   django_settings:

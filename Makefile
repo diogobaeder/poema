@@ -33,3 +33,6 @@ pep8:
 messages:
 	python manage.py makemessages -a
 	python manage.py compilemessages
+
+deploy:
+	ansible-playbook ansible/deploy.yml
