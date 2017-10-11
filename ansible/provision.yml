@@ -6,12 +6,12 @@
     - vault.yml
     - vars.yml
   roles:
-#    - ssh
-#    - domain
-#    - database
+    - ssh
+    - domain
+    - database
     - applications
-#    - versioning
-#    - packages
-#    - cache
+    - versioning
+    - packages
+    - cache
     - project
     - website
