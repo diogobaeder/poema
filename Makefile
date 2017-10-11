@@ -15,6 +15,9 @@ run:
 run-circus:
 	circusd server.cfg
 
+shell:
+	python manage.py shell
+
 collect-templates:
 	python manage.py collecttemplates
 
