@@ -37,6 +37,11 @@
     <<: *manage_base
     command: collectstatic
 
+- name: Collect templates files
+  django_manage:
+    <<: *manage_base
+    command: collecttemplates
+
 - name: Compile localization messages
   shell: "{{ project.virtualenv.django_admin }} compilemessages"
   args:
