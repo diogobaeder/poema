@@ -49,6 +49,12 @@
     name: "{{ applications.uploads.name }}"
     extra_info: "{{ applications.uploads.path }}"
     state: present
-    type: symlink_static_only
+    type: symlink56
     login_name: "{{ webfaction_user }}"
     login_password: "{{ webfaction_passwd }}"
+
+- name: Templating the uploads htaccess
+  template:
+    src: "{{ applications.uploads.htaccess_src }}"
+    dest: "{{ applications.uploads.htaccess_dest }}"
+    mode: 0644

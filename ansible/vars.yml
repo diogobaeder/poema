@@ -28,6 +28,8 @@ applications:
   uploads:
     name: poemauploads
     path: "/home/rafael2001/webapps/poema/uploads"
+    htaccess_src: "{{ playbook_dir }}/htaccess.template"
+    htaccess_dest: "/home/rafael2001/webapps/poemauploads/.htaccess"
 
 versioning:
   repo: "git@github.com:diogobaeder/poema.git"
