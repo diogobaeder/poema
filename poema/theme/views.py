@@ -14,7 +14,13 @@ def home(request):
     else:
         pillars = Page.objects.filter(parent=main_pillar)
 
+    try:
+        about = Page.objects.get(slug='o-que-e-a-poema')
+    except Page.DoesNotExist:
+        about = None
+
     return render(request, 'index.html', {
         'posts': posts,
         'pillars': pillars,
+        'about': about,
     })

@@ -66,14 +66,18 @@
 <div class="light about content-block">
     <div class="container">
         <div class="row">
-            <a href="/quem-somos/" title="A POEMA">
-                <div class="col-xs-6 img-block"></div>
-                <div class="col-xs-6">
-                    <h3 class="referenced">A POEMA</h3>
-                    <p>Aguarde...</p>
+            <div class="col-xs-6 img-block"></div>
+            <div class="col-xs-6">
+            <h3 class="referenced">A POEMA</h3>
+                {% if not about %}
+                <p>Aguarde...</p>
+                {% else %}
+                <p>{{ about.description|truncatewords_html:30 }}</p>
+                <a href="{{ about.get_absolute_url }}" title="{{ about.title }}">
                     <p class="more">// ver mais</p>
-                </div>
-            </a>
+                </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
