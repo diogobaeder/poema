@@ -8,5 +8,6 @@
   roles:
     - applications
     - versioning
+    - cache
     - project
     - website
