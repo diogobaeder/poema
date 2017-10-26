@@ -143,6 +143,23 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 SECRET_KEY = 'j$%=s_uz+&$*7a^mnn!@n*!ew01ohcuv3k#nq8r!kr$m-b^_v#'
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
+
+
 #############
 # DATABASES #
 #############
