@@ -15,6 +15,9 @@ run:
 run-circus:
 	circusd server.cfg
 
+run-gunicorn:
+	gunicorn -c gunicorn.py poema.wsgi
+
 shell:
 	python manage.py shell
 

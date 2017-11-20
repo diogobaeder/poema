@@ -64,6 +64,7 @@ server.cfg
 
 # Deploy stuff
 ansible/provision.retry
+gunicorn.py
 
 # Flask stuff:
 instance/

@@ -49,12 +49,13 @@ project:
     processes: 5
     debug: True
   server:
-    src: "{{ playbook_dir }}/server.cfg.template"
-    dest: "/home/rafael2001/webapps/poema/server.cfg"
-    command: "cd /home/rafael2001/webapps/poema && ~/bin/circusd --daemon server.cfg"
-    reload: "cd /home/rafael2001/webapps/poema && ~/bin/circusctl reloadconfig && ~/bin/circusctl reload"
-    pid_file: /tmp/rafael2001/circusd.pid
-    log_file: /home/rafael2001/logs/user/circus_poema.log
+    src: "{{ playbook_dir }}/gunicorn.py.template"
+    dest: "/home/rafael2001/webapps/poema/gunicorn.py"
+    command: "cd /home/rafael2001/webapps/poema && ~/webapps/poema/.env/bin/gunicorn -c gunicorn.py poema.wsgi"
+    reload: "kill -HUP `cat /tmp/rafael2001/poema.pid`"
+    pid_file: /tmp/rafael2001/poema.pid
+    log_file: /home/rafael2001/logs/user/poema-access.log
+    error_file: /home/rafael2001/logs/user/poema-errors.log
   django_settings:
     module: "poema.prod_settings"
     src: "{{ playbook_dir }}/../poema/prod_settings.py"
