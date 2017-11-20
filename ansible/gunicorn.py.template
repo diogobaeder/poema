@@ -5,6 +5,9 @@ pidfile = '{{ project.server.pid_file }}'
 accesslog = '{{ project.server.log_file }}'
 accesslog = '{{ project.server.error_file }}'
 pythonpath = '{{ applications.main.path }}'
+raw_env = [
+    'DJANGO_SETTINGS_MODULE={{ project.django_settings.module }}',
+]
 
 workers = multiprocessing.cpu_count() * 2 + 1
 max_requests = 100
