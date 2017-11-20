@@ -17,13 +17,3 @@
   pip:
     <<: *pip_base
     name: virtualenvwrapper
-
-- name: Installing circus
-  pip:
-    <<: *pip_base
-    name: circus
-
-- name: Installing circus-web
-  pip:
-    <<: *pip_base
-    name: circus-web

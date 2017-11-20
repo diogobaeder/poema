@@ -12,9 +12,6 @@ lint:
 run:
 	python manage.py runserver
 
-run-circus:
-	circusd server.cfg
-
 run-gunicorn:
 	gunicorn -c gunicorn.py poema.wsgi
 

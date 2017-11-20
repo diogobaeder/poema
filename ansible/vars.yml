@@ -45,9 +45,7 @@ caching:
 project:
   app:
     path: "/home/rafael2001/webapps/poema/poema"
-    wsgi_app: poema.wsgi.application
     processes: 5
-    debug: True
   server:
     src: "{{ playbook_dir }}/gunicorn.py.template"
     dest: "/home/rafael2001/webapps/poema/gunicorn.py"
