@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-11 03:27+0000\n"
+"POT-Creation-Date: 2018-04-30 06:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,170 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: poema/settings.py:119
+
+#: poema/settings.py:23
+msgid "Articles"
+msgstr "Artigos"
+
+#: poema/settings.py:25
+msgid "Media Library"
+msgstr "Biblioteca de mídia"
+
+#: poema/settings.py:123
 msgid "English"
 msgstr "Inglês"
 
-#: poema/settings.py:120
+#: poema/settings.py:124
 msgid "Portuguese"
 msgstr "Português"
+
+#: poema/theme/templates/blog/blog_post_detail.html:37
+#: poema/theme/templates/blog/blog_post_list.html:118
+msgid "Posted by"
+msgstr "Publicado por"
+
+#: poema/theme/templates/blog/blog_post_detail.html:51
+#: poema/theme/templates/blog/blog_post_list.html:161
+msgid "Comments"
+msgstr "Comentários"
+
+#: poema/theme/templates/blog/blog_post_detail.html:54
+#: poema/theme/templates/blog/blog_post_list.html:165
+#, python-format
+msgid "%(comments_count)s comment"
+msgid_plural "%(comments_count)s comments"
+msgstr[0] "%(comments_count)s comentário"
+msgstr[1] "%(comments_count)s comentários"
+
+#: poema/theme/templates/blog/blog_post_detail.html:89
+msgid "Share on Twitter"
+msgstr "Compartilhar no Twitter"
+
+#: poema/theme/templates/blog/blog_post_detail.html:90
+msgid "Share on Facebook"
+msgstr "Compartilhar no Facebook"
+
+#: poema/theme/templates/blog/blog_post_list.html:4
+#: poema/theme/templates/blog/blog_post_list.html:25
+msgid "Blog"
+msgstr "Artigos"
+
+#: poema/theme/templates/blog/blog_post_list.html:34
+msgid "Tag:"
+msgstr ""
+
+#: poema/theme/templates/blog/blog_post_list.html:36
+msgid "Category:"
+msgstr "Categoria:"
+
+#: poema/theme/templates/blog/blog_post_list.html:40
+msgid "Author:"
+msgstr "Autor:"
+
+#: poema/theme/templates/blog/blog_post_list.html:53
+msgid "Viewing posts tagged"
+msgstr "Visualizando artigos tagueados"
+
+#: poema/theme/templates/blog/blog_post_list.html:55
+msgid "Viewing posts for the category"
+msgstr "Visualizando artigos para a categoria"
+
+#: poema/theme/templates/blog/blog_post_list.html:57
+msgid "Viewing posts from"
+msgstr "Visualizando artigos de"
+
+#: poema/theme/templates/blog/blog_post_list.html:60
+msgid "Viewing posts by"
+msgstr "Visualizando artigos por"
+
+#: poema/theme/templates/blog/blog_post_list.html:124
+msgid "in"
+msgstr "em"
+
+#: poema/theme/templates/blog/blog_post_list.html:130
+#, python-format
+msgid "%(sometime)s ago"
+msgstr "%(sometime)s atrás"
+
+#: poema/theme/templates/blog/blog_post_list.html:146
+#: poema/theme/templates/blog/includes/filter_panel.html:86
+#: poema/theme/templates/blog/includes/filter_panel.html:102
+msgid "Tags"
+msgstr ""
+
+#: poema/theme/templates/blog/blog_post_list.html:155
+msgid "read more"
+msgstr "ler mais"
+
+#: poema/theme/templates/blog/includes/filter_panel.html:5
+msgid "Related articles"
+msgstr "Artigos relacionados"
+
+#: poema/theme/templates/blog/includes/filter_panel.html:31
+msgid "Recent Posts"
+msgstr "Artigos recentes"
+
+#: poema/theme/templates/blog/includes/filter_panel.html:57
+msgid "Archive"
+msgstr "Arquivo"
+
+#: poema/theme/templates/blog/includes/filter_panel.html:73
+msgid "Categories"
+msgstr "Categorias"
+
+#: poema/theme/templates/blog/includes/filter_panel.html:117
+msgid "Authors"
+msgstr "Autores"
+
+#: poema/theme/templates/blog/includes/filter_panel.html:129
+msgid "Feeds"
+msgstr ""
+
+#: poema/theme/templates/blog/includes/filter_panel.html:131
+#: poema/theme/templates/blog/includes/filter_panel.html:135
+#: poema/theme/templates/blog/includes/filter_panel.html:139
+#: poema/theme/templates/blog/includes/filter_panel.html:143
+msgid "RSS"
+msgstr ""
+
+#: poema/theme/templates/blog/includes/filter_panel.html:132
+#: poema/theme/templates/blog/includes/filter_panel.html:136
+#: poema/theme/templates/blog/includes/filter_panel.html:140
+#: poema/theme/templates/blog/includes/filter_panel.html:144
+msgid "Atom"
+msgstr ""
+
+#: poema/theme/templates/includes/search_form.html:5
+#: poema/theme/templates/includes/search_form.html:9
+msgid "Search"
+msgstr "Buscar"
+
+#: poema/theme/templates/includes/search_form.html:20
+msgid "Everything"
+msgstr "Tudo"
+
+#: poema/theme/templates/index.html:6 poema/theme/templates/index.html:7
+#: poema/theme/templates/index.html:10
+#: poema/theme/templates/pages/menus/dropdown.html:10
+msgid "Home"
+msgstr ""
+
+#: poema/theme/templates/layout.html:65
+msgid "Toggle Navigation"
+msgstr "Habilitar Navegação"
+
+#: poema/theme/templates/layout.html:120
+msgid "Powered by"
+msgstr ""
+
+#: poema/theme/templates/layout.html:123
+msgid "and"
+msgstr "e"
+
+#: poema/theme/templates/layout.html:129
+msgid "View Mobile Site"
+msgstr "Ver site mobile"
+
+#: poema/theme/templates/pages/contato.html:32
+msgid "Submit"
+msgstr "Enviar"
