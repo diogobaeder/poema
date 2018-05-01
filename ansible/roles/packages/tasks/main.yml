@@ -4,7 +4,7 @@
   easy_install:
     name: pip
     state: latest
-    executable: ~/bin/easy_install-{{ server.python_version }}
+    executable: easy_install-{{ server.python_version }}
 
 - name: Installing virtualenv
   pip:
