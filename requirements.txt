@@ -28,6 +28,6 @@ requests-oauthlib==0.8.0
 rjsmin==1.0.12
 setproctitle==1.1.10
 six==1.11.0
-sorl-thumbnail==12.3
+sorl-thumbnail==12.4.1
 sqlparse==0.2.2
 tzlocal==1.4
