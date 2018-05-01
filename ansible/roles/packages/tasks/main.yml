@@ -10,7 +10,7 @@
   pip:
     <<: &pip_base
       state: latest
-      executable: pip{{ server.python_version }}
+      executable: ~/bin/pip{{ server.python_version }}
     name: virtualenv
 
 - name: Installing virtualenvwrapper
