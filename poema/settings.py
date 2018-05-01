@@ -146,6 +146,8 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 
 SECRET_KEY = 'j$%=s_uz+&$*7a^mnn!@n*!ew01ohcuv3k#nq8r!kr$m-b^_v#'
 
+TEMPLATE_DEBUG = False
+
 
 LOGGING = {
     'version': 1,
