@@ -37,3 +37,6 @@ messages:
 
 deploy:
 	ansible-playbook ansible/deploy.yml
+
+provision:
+	ansible-playbook ansible/provision.yml
