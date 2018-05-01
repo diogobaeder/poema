@@ -2,6 +2,7 @@ bind = "127.0.0.1:{{ server_port }}"
 pidfile = '{{ project.server.pid_file }}'
 accesslog = '{{ project.server.log_file }}'
 errorlog = '{{ project.server.error_file }}'
+capture_output = True
 pythonpath = '{{ applications.main.path }}'
 raw_env = [
     'DJANGO_SETTINGS_MODULE={{ project.django_settings.module }}',

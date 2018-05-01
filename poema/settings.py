@@ -150,6 +150,7 @@ SECRET_KEY = 'j$%=s_uz+&$*7a^mnn!@n*!ew01ohcuv3k#nq8r!kr$m-b^_v#'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'propagate': True,
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
