@@ -5,7 +5,6 @@
     name: "{{ domains.name }}"
     state: present
     subdomains:
-      - "{{ domains.main }}"
       - "{{ domains.static }}"
       - "{{ domains.uploads }}"
     login_name: "{{webfaction_user}}"

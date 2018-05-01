@@ -11,25 +11,24 @@ ssh:
     private_key: ~/.ssh/poema
 
 domains:
-  name: rafael2001.webfactional.com
-  main: poema
-  static: poemastatic
-  uploads: poemauploads
+  name: poema.info
+  static: static
+  uploads: uploads
 
 applications:
   main:
     name: poema
     path: "/home/rafael2001/webapps/poema"
   static:
-    name: poemastatic
+    name: static
     path: "/home/rafael2001/webapps/poema/static"
     htaccess_src: "{{ playbook_dir }}/htaccess.template"
-    htaccess_dest: "/home/rafael2001/webapps/poemastatic/.htaccess"
+    htaccess_dest: "/home/rafael2001/webapps/static/.htaccess"
   uploads:
-    name: poemauploads
+    name: uploads
     path: "/home/rafael2001/webapps/poema/uploads"
     htaccess_src: "{{ playbook_dir }}/htaccess.template"
-    htaccess_dest: "/home/rafael2001/webapps/poemauploads/.htaccess"
+    htaccess_dest: "/home/rafael2001/webapps/uploads/.htaccess"
 
 versioning:
   repo: "git@github.com:diogobaeder/poema.git"
@@ -70,21 +69,21 @@ project:
 website:
   main:
     name: poema
-    domain: poema.rafael2001.webfactional.com
+    domain: poema.info
     host: web501.webfaction.com
     app: poema
     url_path: /
   static:
-    name: poemastatic
-    domain: poemastatic.rafael2001.webfactional.com
+    name: static
+    domain: static.poema.info
     host: web501.webfaction.com
-    app: poemastatic
+    app: static
     url_path: /
   uploads:
-    name: poemauploads
-    domain: poemauploads.rafael2001.webfactional.com
+    name: uploads
+    domain: uploads.poema.info
     host: web501.webfaction.com
-    app: poemauploads
+    app: uploads
     url_path: /
 
 webfaction_user: "{{ vault.webfaction.user }}"
