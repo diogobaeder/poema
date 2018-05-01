@@ -19,6 +19,7 @@
         <div class="col-xs-4 news-event">
             <a title="{{ post.title }}" href="{{ post.get_absolute_url }}">
                 {% if post.featured_image %}
+                    <!-- featured image -->
                 {% thumbnail post.featured_image "380x409" crop='center' as im %}
                     <img alt="{{ post.title }}" src="{{ im.url }}" width="{{ im.x }}" height="{{ im.y }}">
                 {% endthumbnail %}
