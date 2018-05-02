@@ -73,21 +73,24 @@ website:
     host: web501.webfaction.com
     app: poema
     url_path: /
-    https: true
+#    https: true  # For after the website is under HTTPS
+    https: false  # For before the website is under HTTPS
   static:
     name: static
     domain: static.poema.info
     host: web501.webfaction.com
     app: static
     url_path: /
-    https: true
+#    https: true  # For after the website is under HTTPS
+    https: false  # For before the website is under HTTPS
   uploads:
     name: uploads
     domain: uploads.poema.info
     host: web501.webfaction.com
     app: uploads
     url_path: /
-    https: true
+#    https: true  # For after the website is under HTTPS
+    https: false  # For before the website is under HTTPS
 
 webfaction_user: "{{ vault.webfaction.user }}"
 webfaction_passwd: "{{ vault.webfaction.password }}"
