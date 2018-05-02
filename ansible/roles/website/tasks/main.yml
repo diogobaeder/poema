@@ -9,7 +9,7 @@
       - "{{ item.domain }}"
     site_apps:
       - ["{{ item.app }}", "{{ item.url_path }}"]
-    https: no
+    https: "{{ item.https }}"
     login_name: "{{webfaction_user}}"
     login_password: "{{webfaction_passwd}}"
   with_items:
