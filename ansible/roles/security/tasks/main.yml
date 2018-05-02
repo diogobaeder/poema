@@ -9,7 +9,7 @@
 
 - name: Securing website
   shell: >
-    wfcli secure
+    ~/bin/wfcli secure
     --webfaction-host={{ website.main.host }}
     --webfaction-user={{ webfaction_user }}
     --webfaction-password={{ webfaction_passwd }}
