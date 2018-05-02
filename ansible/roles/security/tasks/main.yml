@@ -9,10 +9,10 @@
 
 - name: Securing website
   shell: >
+    WEBFACTION_HOST={{ website.main.host }}
+    WEBFACTION_USER={{ webfaction_user }}
+    WEBFACTION_PASS={{ webfaction_passwd }}
     ~/bin/wfcli secure
-    --webfaction-host={{ website.main.host }}
-    --webfaction-user={{ webfaction_user }}
-    --webfaction-password={{ webfaction_passwd }}
     {{ website.main.domain }}
   args:
     creates: ~/.acme.sh

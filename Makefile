@@ -36,7 +36,7 @@ messages:
 	python manage.py compilemessages
 
 deploy:
-	ansible-playbook ansible/deploy.yml
+	ansible-playbook -vvv ansible/deploy.yml
 
 provision:
 	ansible-playbook ansible/provision.yml
