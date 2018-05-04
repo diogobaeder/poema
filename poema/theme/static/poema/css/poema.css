@@ -159,6 +159,12 @@ nav.navbar.shrink .social-buttons {
 .social-button.youtube {
     background: url('../img/youtube_btn.png') no-repeat;
 }
+.social-button.instagram {
+    background: url('../img/instagram_btn.png') no-repeat;
+}
+.social-button.twitter {
+    background: url('../img/twitter_btn.png') no-repeat;
+}
 
 
 
