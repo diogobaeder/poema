@@ -18,9 +18,9 @@
     - "{{ website.uploads }}"
 
 - name: Creating insecure redirection websites
+  when: item.https
   webfaction_site:
-    when: item.https
-    name: "{{ item.name }}"
+    name: "{{ item.name }}_redirect"
     state: present
     host: "{{ item.host }}"
     subdomains:
