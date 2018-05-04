@@ -66,7 +66,7 @@ body {
 }
 
 .navbar .social-buttons {
-    margin-right: -80px;
+    margin-right: -160px;
     margin-top: 10px;
     opacity: 0;
     -webkit-transition: all 0.3s ease;
