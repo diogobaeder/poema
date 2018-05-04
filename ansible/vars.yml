@@ -22,13 +22,18 @@ applications:
   static:
     name: static
     path: "/home/rafael2001/webapps/poema/static"
-    htaccess_src: "{{ playbook_dir }}/htaccess.template"
+    htaccess_src: "{{ playbook_dir }}/htaccess.static.template"
     htaccess_dest: "/home/rafael2001/webapps/static/.htaccess"
   uploads:
     name: uploads
     path: "/home/rafael2001/webapps/poema/uploads"
-    htaccess_src: "{{ playbook_dir }}/htaccess.template"
+    htaccess_src: "{{ playbook_dir }}/htaccess.uploads.template"
     htaccess_dest: "/home/rafael2001/webapps/uploads/.htaccess"
+  redirect_to_secure:
+    name: redirect_to_secure
+    path: "/home/rafael2001/webapps/redirect_to_secure"
+    htaccess_src: "{{ playbook_dir }}/htaccess.redirect_to_secure.template"
+    htaccess_dest: "/home/rafael2001/webapps/redirect_to_secure/.htaccess"
 
 versioning:
   repo: "git@github.com:diogobaeder/poema.git"
@@ -72,6 +77,7 @@ website:
     domain: poema.info
     host: web501.webfaction.com
     app: poema
+    redirect_to_secure_app: redirect_to_secure
     url_path: /
     https: true  # For after the website is under HTTPS
 #    https: false  # For before the website is under HTTPS
@@ -80,6 +86,7 @@ website:
     domain: static.poema.info
     host: web501.webfaction.com
     app: static
+    redirect_to_secure_app: redirect_to_secure
     url_path: /
     https: true  # For after the website is under HTTPS
 #    https: false  # For before the website is under HTTPS
@@ -88,6 +95,7 @@ website:
     domain: uploads.poema.info
     host: web501.webfaction.com
     app: uploads
+    redirect_to_secure_app: redirect_to_secure
     url_path: /
     https: true  # For after the website is under HTTPS
 #    https: false  # For before the website is under HTTPS

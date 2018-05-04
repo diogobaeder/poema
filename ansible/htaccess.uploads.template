@@ -1,0 +1,4 @@
+Header set Access-Control-Allow-Origin: "*"
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}

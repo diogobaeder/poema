@@ -17,6 +17,24 @@
     - "{{ website.static }}"
     - "{{ website.uploads }}"
 
+- name: Creating insecure redirection websites
+  webfaction_site:
+    when: item.https
+    name: "{{ item.name }}"
+    state: present
+    host: "{{ item.host }}"
+    subdomains:
+      - "{{ item.domain }}"
+    site_apps:
+      - ["{{ item.redirect_to_secure_app }}", "{{ item.url_path }}"]
+    https: false
+    login_name: "{{webfaction_user}}"
+    login_password: "{{webfaction_passwd}}"
+  with_items:
+    - "{{ website.main }}"
+    - "{{ website.static }}"
+    - "{{ website.uploads }}"
+
 - name: Adding server to cron
   cron:
     name: app_server

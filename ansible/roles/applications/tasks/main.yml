@@ -58,3 +58,18 @@
     src: "{{ applications.uploads.htaccess_src }}"
     dest: "{{ applications.uploads.htaccess_dest }}"
     mode: 0644
+
+- name: Create the website's redirection to secure app
+  register: redirect_to_secure_app_result
+  webfaction_app:
+    name: "{{ applications.redirect_to_secure.name }}"
+    state: present
+    type: static_php70
+    login_name: "{{ webfaction_user }}"
+    login_password: "{{ webfaction_passwd }}"
+
+- name: Templating the redirect_to_secure htaccess
+  template:
+    src: "{{ applications.redirect_to_secure.htaccess_src }}"
+    dest: "{{ applications.redirect_to_secure.htaccess_dest }}"
+    mode: 0644
