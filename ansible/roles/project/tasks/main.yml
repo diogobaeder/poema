@@ -42,6 +42,11 @@
   args:
     chdir: "{{ project.app.path }}"
 
+- name: Getting the server port file
+  tags: project
+  shell: "cat {{ project.server.port_file }}"
+  register: server_port
+
 - name: Templating the web server configuration
   tags: project
   template:
@@ -49,7 +54,7 @@
     dest: "{{ project.server.dest }}"
     mode: 0644
   vars:
-    server_port: "{{ lookup('file', project.server.port_file).strip() }}"
+    server_port: "{{ server_port.strip() }}"
 
 - name: Templating the supervisor configuration
   tags: project
