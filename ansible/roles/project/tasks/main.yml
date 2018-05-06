@@ -44,7 +44,6 @@
 
 - name: Templating the web server configuration
   tags: project
-  register: server_template_result
   template:
     src: "{{ project.server.src }}"
     dest: "{{ project.server.dest }}"
@@ -54,7 +53,6 @@
 
 - name: Templating the supervisor configuration
   tags: project
-  register: supervisor_template_result
   template:
     src: "{{ project.supervisor.src }}"
     dest: "{{ project.supervisor.dest }}"

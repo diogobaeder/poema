@@ -69,7 +69,6 @@
 
 - name: Create the website's redirection to secure app
   tags: applications
-  register: redirect_to_secure_app_result
   webfaction_app:
     name: "{{ applications.redirect_to_secure.name }}"
     state: present
