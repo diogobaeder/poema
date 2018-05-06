@@ -1,4 +1,4 @@
-bind = "127.0.0.1:{{ server_port }}"
+bind = "127.0.0.1:{{ server_port.strip() }}"
 pidfile = '{{ project.server.pid_file }}'
 accesslog = '{{ project.server.log_file }}'
 errorlog = '{{ project.server.error_file }}'

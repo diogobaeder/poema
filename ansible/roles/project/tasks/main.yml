@@ -44,8 +44,9 @@
 
 - name: Getting the server port file
   tags: project
-  shell: "cat {{ project.server.port_file }}"
-  register: server_port_content
+  slurp:
+    src: "cat {{ project.server.port_file }}"
+  register: server_port_data
 
 - name: Templating the web server configuration
   tags: project
@@ -54,7 +55,7 @@
     dest: "{{ project.server.dest }}"
     mode: 0644
   vars:
-    server_port: "{{ server_port_content.result.strip() }}"
+    server_port: "{{ server_port_data['content'] | b64decode }}"
 
 - name: Templating the supervisor configuration
   tags: project
