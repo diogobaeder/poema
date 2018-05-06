@@ -1,0 +1,15 @@
+---
+
+- name: Creating processes directory
+  tags: filesystem
+  file:
+    path: ~/processes
+    state: directory
+    mode: 0700
+
+- name: Adding processes cleanup to cron
+  tags: filesystem
+  cron:
+    name: processes-cleanup
+    special_time: reboot
+    job: rm -rf ~/processes/*

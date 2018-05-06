@@ -2,7 +2,6 @@
 
 server:
   home: /home/rafael2001
-  tempdir: /tmp/rafael2001
   python_version: 3.6
 
 ssh:
@@ -42,20 +41,22 @@ versioning:
 
 caching:
   process_name: memcached
-  command: "memcached -d -m 50 -s /tmp/rafael2001/memcached.sock -P /tmp/rafael2001/memcached.pid"
-  dir: /tmp/rafael2001
-  pid_file: /tmp/rafael2001/memcached.pid
+  command: "memcached -m 50 -s /home/rafael2001/processes/memcached.sock -P /home/rafael2001/processes/memcached.pid"
+  dir: /home/rafael2001/processes
+  pid_file: /home/rafael2001/processes/memcached.pid
 
 project:
+  name: poema
   app:
     path: "/home/rafael2001/webapps/poema/poema"
     processes: 3
   server:
+    dir: "/home/rafael2001/webapps/poema"
     src: "{{ playbook_dir }}/gunicorn.py.template"
     dest: "/home/rafael2001/webapps/poema/gunicorn.py"
-    command: "cd /home/rafael2001/webapps/poema && ~/webapps/poema/.env/bin/gunicorn -c gunicorn.py poema.wsgi"
-    reload: "kill -HUP `cat /tmp/rafael2001/poema.pid`"
-    pid_file: /tmp/rafael2001/poema.pid
+    command: "/home/rafael2001/webapps/poema/.env/bin/gunicorn -c gunicorn.py poema.wsgi"
+    reload: "kill -HUP `cat /home/rafael2001/processes/poema.pid`"
+    pid_file: /home/rafael2001/processes/poema.pid
     log_file: /home/rafael2001/logs/user/poema-access.log
     error_file: /home/rafael2001/logs/user/poema-errors.log
   django_settings:
@@ -70,6 +71,12 @@ project:
     pip: "/home/rafael2001/webapps/poema/.env/bin/pip"
     django_admin: "/home/rafael2001/webapps/poema/.env/bin/django-admin"
     requirements: "/home/rafael2001/webapps/poema/requirements.txt"
+  supervisor:
+    tempdir: "/home/rafael2001/processes"
+    logdir: "/home/rafael2001/logs/user"
+    dir: "/home/rafael2001/webapps/poema"
+    src: "{{ playbook_dir }}/supervisord.conf.template"
+    dest: "/home/rafael2001/webapps/poema/supervisord.conf"
 
 website:
   main:

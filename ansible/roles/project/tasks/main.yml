@@ -1,12 +1,5 @@
 ---
 
-- name: Creating temp dir
-  tags: project
-  file:
-    path: "{{ server.tempdir }}"
-    state: directory
-    mode: 0700
-
 - name: Create the virtualenv
   tags: project
   shell: "{{ project.virtualenv.command }} {{ project.virtualenv.name }}"
@@ -58,3 +51,35 @@
     mode: 0644
   vars:
     server_port: "{{ main_app_result.result.port }}"
+
+- name: Templating the supervisor configuration
+  tags: project
+  register: supervisor_template_result
+  template:
+    src: "{{ project.supervisor.src }}"
+    dest: "{{ project.supervisor.dest }}"
+    mode: 0644
+
+- name: Starting supervisord
+  tags: project
+  shell: "supervisord -c {{ project.supervisor.dest }}"
+  creates: "{{ project.supervisor.tempdir }}/supervisord.pid"
+
+- name: Rereading supervisord configuration
+  tags: project
+  shell: "supervisorctl -c {{ project.supervisor.dest }} reread"
+
+- name: Updating supervisord configuration
+  tags: project
+  shell: "supervisorctl -c {{ project.supervisor.dest }} update"
+
+- name: Restarting all supervisord programs
+  tags: project
+  shell: "supervisorctl -c {{ project.supervisor.dest }} restart all"
+
+- name: Adding supervisord to cron
+  tags: project
+  cron:
+    name: supervisord
+    special_time: reboot
+    job: "supervisord -c {{ project.supervisor.dest }}"

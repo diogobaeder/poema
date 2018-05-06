@@ -67,6 +67,7 @@ server.cfg
 # Deploy stuff
 ansible/provision.retry
 gunicorn.py
+supervisord.conf
 **/*.retry
 
 # Flask stuff:

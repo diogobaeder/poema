@@ -37,19 +37,19 @@
     - "{{ website.static }}"
     - "{{ website.uploads }}"
 
-- name: Adding server to cron
-  tags: website
-  cron:
-    name: app_server
-    special_time: reboot
-    job: "{{ project.server.command }}"
-
-- name: Starting server
-  tags: website
-  shell: "{{ project.server.command }}"
-  args:
-    creates: "{{ project.server.pid_file }}"
-
-- name: Reloading server configuration
-  tags: website
-  shell: "{{ project.server.reload }}"
+#- name: Adding server to cron
+#  tags: website
+#  cron:
+#    name: app_server
+#    special_time: reboot
+#    job: "{{ project.server.command }}"
+#
+#- name: Starting server
+#  tags: website
+#  shell: "{{ project.server.command }}"
+#  args:
+#    creates: "{{ project.server.pid_file }}"
+#
+#- name: Reloading server configuration
+#  tags: website
+#  shell: "{{ project.server.reload }}"

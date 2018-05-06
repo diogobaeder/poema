@@ -7,11 +7,11 @@
     - vars.yml
   roles:
     - ssh
+    - filesystem
     - domain
     - database
     - applications
     - versioning
     - packages
-    - cache
     - project
     - website
