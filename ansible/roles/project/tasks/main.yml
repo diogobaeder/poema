@@ -54,7 +54,7 @@
     dest: "{{ project.server.dest }}"
     mode: 0644
   vars:
-    server_port: "{{ server_port_content.strip() }}"
+    server_port: "{{ server_port_content.result.strip() }}"
 
 - name: Templating the supervisor configuration
   tags: project
