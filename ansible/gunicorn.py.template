@@ -12,4 +12,4 @@ workers = {{ project.app.processes }}
 max_requests = 100
 max_requests_jitter = 10
 proc_name = 'poema-gunicorn'
-daemon = True
+daemon = False
