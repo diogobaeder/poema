@@ -45,7 +45,7 @@
 - name: Getting the server port file
   tags: project
   slurp:
-    src: "cat {{ project.server.port_file }}"
+    src: "{{ project.server.port_file }}"
   register: server_port_data
 
 - name: Templating the web server configuration
