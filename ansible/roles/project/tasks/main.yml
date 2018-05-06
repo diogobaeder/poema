@@ -49,7 +49,7 @@
     dest: "{{ project.server.dest }}"
     mode: 0644
   vars:
-    server_port: "{{ main_app_result.result.port }}"
+    server_port: "{{ lookup('file', project.server.port_file).strip() }}"
 
 - name: Templating the supervisor configuration
   tags: project

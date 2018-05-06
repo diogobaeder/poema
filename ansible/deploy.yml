@@ -6,6 +6,5 @@
     - vault.yml
     - vars.yml
   roles:
-    - applications
     - versioning
     - project
