@@ -1,6 +1,7 @@
 ---
 
 - name: Create the domains
+  tags: domains
   webfaction_domain:
     name: "{{ domains.name }}"
     state: present

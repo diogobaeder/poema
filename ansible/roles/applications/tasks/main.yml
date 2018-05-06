@@ -1,6 +1,7 @@
 ---
 
 - name: Create the git app
+  tags: applications
   webfaction_app:
     name: git
     state: present
@@ -9,6 +10,7 @@
     login_password: "{{ webfaction_passwd }}"
 
 - name: Create the website's main app
+  tags: applications
   register: main_app_result
   webfaction_app:
     name: "{{ applications.main.name }}"
@@ -18,12 +20,14 @@
     login_password: "{{ webfaction_passwd }}"
 
 - name: Create directory for static app
+  tags: applications
   file:
     path: "{{ applications.static.path }}"
     state: directory
     mode: 0755
 
 - name: Create the static app
+  tags: applications
   webfaction_app:
     name: "{{ applications.static.name }}"
     extra_info: "{{ applications.static.path }}"
@@ -33,18 +37,21 @@
     login_password: "{{ webfaction_passwd }}"
 
 - name: Templating the static htaccess
+  tags: applications
   template:
     src: "{{ applications.static.htaccess_src }}"
     dest: "{{ applications.static.htaccess_dest }}"
     mode: 0644
 
 - name: Create directory for uploads app
+  tags: applications
   file:
     path: "{{ applications.uploads.path }}"
     state: directory
     mode: 0755
 
 - name: Create the uploads app
+  tags: applications
   webfaction_app:
     name: "{{ applications.uploads.name }}"
     extra_info: "{{ applications.uploads.path }}"
@@ -54,12 +61,14 @@
     login_password: "{{ webfaction_passwd }}"
 
 - name: Templating the uploads htaccess
+  tags: applications
   template:
     src: "{{ applications.uploads.htaccess_src }}"
     dest: "{{ applications.uploads.htaccess_dest }}"
     mode: 0644
 
 - name: Create the website's redirection to secure app
+  tags: applications
   register: redirect_to_secure_app_result
   webfaction_app:
     name: "{{ applications.redirect_to_secure.name }}"
@@ -69,6 +78,7 @@
     login_password: "{{ webfaction_passwd }}"
 
 - name: Templating the redirect_to_secure htaccess
+  tags: applications
   template:
     src: "{{ applications.redirect_to_secure.htaccess_src }}"
     dest: "{{ applications.redirect_to_secure.htaccess_dest }}"

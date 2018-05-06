@@ -1,6 +1,7 @@
 ---
 
 - name: Creating websites
+  tags: website
   webfaction_site:
     name: "{{ item.name }}"
     state: present
@@ -18,6 +19,7 @@
     - "{{ website.uploads }}"
 
 - name: Creating insecure redirection websites
+  tags: website
   when: item.https
   webfaction_site:
     name: "{{ item.name }}_redirect"
@@ -36,15 +38,18 @@
     - "{{ website.uploads }}"
 
 - name: Adding server to cron
+  tags: website
   cron:
     name: app_server
     special_time: reboot
     job: "{{ project.server.command }}"
 
 - name: Starting server
+  tags: website
   shell: "{{ project.server.command }}"
   args:
     creates: "{{ project.server.pid_file }}"
 
 - name: Reloading server configuration
+  tags: website
   shell: "{{ project.server.reload }}"

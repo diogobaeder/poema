@@ -1,30 +1,35 @@
 ---
 
 - name: Creating temp dir
+  tags: project
   file:
     path: "{{ server.tempdir }}"
     state: directory
     mode: 0700
 
 - name: Create the virtualenv
+  tags: project
   shell: "{{ project.virtualenv.command }} {{ project.virtualenv.name }}"
   args:
     chdir: "{{ applications.main.path }}"
     creates: "{{ applications.main.path }}/{{ project.virtualenv.name }}"
 
 - name: Install dependencies
+  tags: project
   pip:
     requirements: "{{ project.virtualenv.requirements }}"
     chdir: "{{ applications.main.path }}"
     executable: "{{ project.virtualenv.pip }}"
 
 - name: Transfer production settings
+  tags: project
   copy:
     src: "{{ project.django_settings.src }}"
     dest: "{{ project.django_settings.dest }}"
     mode: 0600
 
 - name: Migrate the database
+  tags: project
   django_manage:
     <<: &manage_base
       app_path: "{{ applications.main.path }}"
@@ -33,16 +38,19 @@
     command: migrate
 
 - name: Collect static files
+  tags: project
   django_manage:
     <<: *manage_base
     command: collectstatic
 
 - name: Compile localization messages
+  tags: project
   shell: "{{ project.virtualenv.django_admin }} compilemessages"
   args:
     chdir: "{{ project.app.path }}"
 
 - name: Templating the web server configuration
+  tags: project
   register: server_template_result
   template:
     src: "{{ project.server.src }}"

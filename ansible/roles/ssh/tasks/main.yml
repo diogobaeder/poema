@@ -1,18 +1,21 @@
 ---
 
 - name: Create .ssh dir
+  tags: ssh
   file:
     path: ~/.ssh
     state: directory
     mode: 0700
 
 - name: Copy public key file
+  tags: ssh
   copy:
     src: "{{ ssh.files.public_key }}"
     dest: "~/.ssh/id_rsa.pub"
     mode: 0600
 
 - name: Copy private key file
+  tags: ssh
   copy:
     src: "{{ ssh.files.private_key }}"
     dest: "~/.ssh/id_rsa"

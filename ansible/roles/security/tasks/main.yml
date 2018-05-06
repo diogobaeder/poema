@@ -1,6 +1,7 @@
 ---
 
 - name: Installing wfcli
+  tags: security
   pip:
     <<: &pip_base
       state: latest
@@ -8,6 +9,7 @@
     name: wfcli
 
 - name: Securing website
+  tags: security
   shell: >
     WEBFACTION_HOST={{ website.main.host }}
     WEBFACTION_USER={{ webfaction_user }}

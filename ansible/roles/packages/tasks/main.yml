@@ -1,12 +1,21 @@
 ---
 
-- name: Installing pip
+- name: Installing pip2
+  tags: packages
+  easy_install:
+    name: pip
+    state: latest
+    executable: easy_install-2.7
+
+- name: Installing pip3
+  tags: packages
   easy_install:
     name: pip
     state: latest
     executable: easy_install-{{ server.python_version }}
 
 - name: Installing virtualenv
+  tags: packages
   pip:
     <<: &pip_base
       state: latest
@@ -14,6 +23,14 @@
     name: virtualenv
 
 - name: Installing virtualenvwrapper
+  tags: packages
   pip:
     <<: *pip_base
     name: virtualenvwrapper
+
+- name: Installing supervisor
+  tags: packages
+  pip:
+    name: supervisor
+    state: latest
+    executable: ~/bin/pip2

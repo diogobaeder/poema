@@ -1,6 +1,7 @@
 ---
 
 - name: Create the database
+  tags: database
   webfaction_db:
     name: "{{vault.db.user}}"
     password: "{{vault.db.password}}"
