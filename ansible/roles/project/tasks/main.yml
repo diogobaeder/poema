@@ -45,7 +45,7 @@
 - name: Getting the server port file
   tags: project
   shell: "cat {{ project.server.port_file }}"
-  register: server_port
+  register: server_port_content
 
 - name: Templating the web server configuration
   tags: project
@@ -54,7 +54,7 @@
     dest: "{{ project.server.dest }}"
     mode: 0644
   vars:
-    server_port: "{{ server_port.strip() }}"
+    server_port: "{{ server_port_content.strip() }}"
 
 - name: Templating the supervisor configuration
   tags: project
