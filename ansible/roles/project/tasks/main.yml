@@ -63,7 +63,8 @@
 - name: Starting supervisord
   tags: project
   shell: "supervisord -c {{ project.supervisor.dest }}"
-  creates: "{{ project.supervisor.tempdir }}/supervisord.pid"
+  args:
+    creates: "{{ project.supervisor.tempdir }}/supervisord.pid"
 
 - name: Rereading supervisord configuration
   tags: project
