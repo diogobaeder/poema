@@ -19,6 +19,12 @@
     login_name: "{{ webfaction_user }}"
     login_password: "{{ webfaction_passwd }}"
 
+- name: Create the website's port file
+  tags: applications
+  copy:
+    content: "{{ main_app_result.result.port }}"
+    dest: "{{ project.server.port_file }}"
+
 - name: Create directory for static app
   tags: applications
   file:

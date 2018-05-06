@@ -68,6 +68,7 @@ server.cfg
 ansible/provision.retry
 gunicorn.py
 supervisord.conf
+server.port
 **/*.retry
 
 # Flask stuff:

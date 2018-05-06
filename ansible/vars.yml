@@ -59,6 +59,7 @@ project:
     pid_file: /home/rafael2001/processes/poema.pid
     log_file: /home/rafael2001/logs/user/poema-access.log
     error_file: /home/rafael2001/logs/user/poema-errors.log
+    port_file: "/home/rafael2001/webapps/poema/server.port"
     processes: 1
   django_settings:
     module: "poema.prod_settings"
