@@ -62,25 +62,25 @@
 
 - name: Starting supervisord
   tags: project
-  shell: "supervisord -c {{ project.supervisor.dest }}"
+  shell: "{{ project.supervisor.daemon_command }}"
   args:
     creates: "{{ project.supervisor.tempdir }}/supervisord.pid"
 
 - name: Rereading supervisord configuration
   tags: project
-  shell: "supervisorctl -c {{ project.supervisor.dest }} reread"
+  shell: "{{ project.supervisor.control_command }} reread"
 
 - name: Updating supervisord configuration
   tags: project
-  shell: "supervisorctl -c {{ project.supervisor.dest }} update"
+  shell: "{{ project.supervisor.control_command }} update"
 
 - name: Restarting all supervisord programs
   tags: project
-  shell: "supervisorctl -c {{ project.supervisor.dest }} restart all"
+  shell: "{{ project.supervisor.control_command }} restart all"
 
 - name: Adding supervisord to cron
   tags: project
   cron:
     name: supervisord
     special_time: reboot
-    job: "supervisord -c {{ project.supervisor.dest }}"
+    job: "{{ project.supervisor.daemon_command }}"

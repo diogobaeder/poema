@@ -77,6 +77,8 @@ project:
     dir: "/home/rafael2001/webapps/poema"
     src: "{{ playbook_dir }}/supervisord.conf.template"
     dest: "/home/rafael2001/webapps/poema/supervisord.conf"
+    daemon_command: "/home/rafael2001/bin/supervisord -c /home/rafael2001/webapps/poema/supervisord.conf"
+    control_command: "/home/rafael2001/bin/supervisorctl -c /home/rafael2001/webapps/poema/supervisord.conf"
 
 website:
   main:
