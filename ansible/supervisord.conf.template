@@ -99,7 +99,7 @@ serverurl=unix://{{ project.supervisor.tempdir }}/supervisor.sock ; use a unix:/
 [program:server]
 command={{ project.server.command }}
 process_name={{ project.name }}_%(process_num)s
-numprocs={{ project.app.processes }}
+numprocs={{ project.server.processes }}
 directory={{ project.server.dir }}
 
 [program:caching]
