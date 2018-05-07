@@ -12,7 +12,7 @@
   pip:
     requirements: "{{ project.virtualenv.requirements }}"
     chdir: "{{ applications.main.path }}"
-    executable: "{{ project.virtualenv.pip }}"
+    virtualenv: "{{ project.virtualenv.dir }}"
 
 - name: Transfer production settings
   tags: project

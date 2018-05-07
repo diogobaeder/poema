@@ -68,6 +68,7 @@ project:
   virtualenv:
     command: "/home/rafael2001/bin/virtualenv"
     name: ".env"
+    dir: "/home/rafael2001/webapps/poema/.env"
     bin: "/home/rafael2001/webapps/poema/.env/bin"
     python: "/home/rafael2001/webapps/poema/.env/bin/python"
     pip: "/home/rafael2001/webapps/poema/.env/bin/pip"
