@@ -455,6 +455,7 @@ form.contact {
 
     .navbar-nav {
         clear: both;
+        margin: 0;
     }
 
     form.search {
@@ -467,6 +468,7 @@ form.contact {
 
     #home-page .news.featuring .news-event {
         padding-bottom: 10px;
+        overflow: hidden;
     }
 
     #home-page .news.other .news-event {
