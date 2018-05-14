@@ -468,4 +468,13 @@ form.contact {
     #home-page .news.featuring .news-event {
         padding-bottom: 10px;
     }
+
+    #home-page .news.other .news-event {
+        overflow: hidden;
+    }
+
+    footer .nav-footer > ul {
+        clear: both;
+        width: 100%;
+    }
 }

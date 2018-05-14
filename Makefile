@@ -10,7 +10,7 @@ lint:
 	flake8
 
 run:
-	python manage.py runserver
+	python manage.py runserver 0.0.0.0:8000
 
 run-gunicorn:
 	gunicorn -c gunicorn.py poema.wsgi
