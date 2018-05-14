@@ -16,7 +16,7 @@
 <div class="light news featuring content-block">
     <div class="container">
         {% for post in posts|slice:':3' %}
-        <div class="col-xs-4 news-event">
+        <div class="col-md-4 news-event">
             <a title="{{ post.title }}" href="{{ post.get_absolute_url }}">
                 {% if post.featured_image %}
                     <!-- featured image -->
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             {% for post in posts|slice:'3:' %}
-            <div class="col-xs-4">
+            <div class="col-md-4">
                 <a class="news-event" title="{{ post.title }}" href="{{ post.get_absolute_url }}">
                 {% if post.featured_image %}
                 {% thumbnail post.featured_image "360x182" crop='center' as im %}
@@ -67,8 +67,8 @@
 <div class="light about content-block">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 img-block"></div>
-            <div class="col-xs-6">
+            <div class="col-md-6 img-block"></div>
+            <div class="col-md-6">
             <h3 class="referenced">A POEMA</h3>
                 {% if not about %}
                 <p>Aguarde...</p>
@@ -85,8 +85,8 @@
 <div class="content-block pillars">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 img-block"></div>
-            <div class="col-xs-6">
+            <div class="col-md-6 img-block"></div>
+            <div class="col-md-6">
                 <h3 class="referenced">Nossos eixos</h3>
                 <div class="tab-content">
                     {% for page in pillars %}
