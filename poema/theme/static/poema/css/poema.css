@@ -128,6 +128,10 @@ footer .site-info a.logo {
     text-indent: -10000em;
 }
 
+footer .social-buttons {
+    display: none;
+}
+
 /* Shrink navbar */
 
 @media (min-width: 768px) {
@@ -478,5 +482,10 @@ form.contact {
     footer .nav-footer > ul {
         clear: both;
         width: 100%;
+    }
+
+    footer .social-buttons {
+        display: block;
+        margin-bottom: 45px;
     }
 }
