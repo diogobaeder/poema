@@ -5,8 +5,8 @@ from mezzanine.pages.models import Page
 
 
 def home(request):
-    posts = (BlogPost.objects.prefetch_related('categories').all()
-             .order_by('-publish_date')[:9])
+    posts = (BlogPost.objects.published().prefetch_related('categories').all()
+                 .order_by('-publish_date')[:9])
     try:
         main_pillar = Page.objects.get(title__in=['Pilares', 'Eixos'])
     except Page.DoesNotExist:
